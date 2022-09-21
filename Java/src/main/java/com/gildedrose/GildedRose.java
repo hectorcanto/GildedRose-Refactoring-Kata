@@ -20,6 +20,9 @@ class GildedRose {
                 case AGED_BRIE:
                     processAgedBrie(item);
                     continue;
+                case BACKSTAGE_PASSES:
+                    processBackstagePasses(item);
+                    continue;
                     //TODO add rest of item types
                 default:
                     processDefaultItem(item);
@@ -27,16 +30,37 @@ class GildedRose {
         }
     }
 
-    private void processAgedBrie(Item item){
-        UpdateQualityHelper.increaseItemQuality(item);
-        UpdateQualityHelper.updateSellIn(item);
-        UpdateQualityHelper.increaseItemQuality(item);
-    }
-
     private void processDefaultItem(Item item){
         UpdateQualityHelper.decreaseItemQuality(item, 1);
         UpdateQualityHelper.updateSellIn(item);
         UpdateQualityHelper.decreaseItemQuality(item, 1);
+    }
+
+    private void processAgedBrie(Item item){
+        UpdateQualityHelper.increaseItemQuality(item, 1);
+        UpdateQualityHelper.updateSellIn(item);
+        UpdateQualityHelper.increaseItemQuality(item, 1);
+    }
+
+    private void processBackstagePasses(Item item){
+        UpdateQualityHelper.increaseItemQuality(item, 1);
+        UpdateQualityHelper.updateSellIn(item);
+        increaseBackStagePassesPostSellIn(item);
+    }
+
+    private void processSulfuras(Item item){
+        //TODO complete method
+    }
+
+    private void increaseBackStagePassesPostSellIn(Item item){
+        UpdateQualityHelper.increaseItemQuality(item,1);
+        if (item.sellIn < 11) {
+            UpdateQualityHelper.increaseItemQuality(item,1);
+        }
+
+        if (item.sellIn < 6) {
+            UpdateQualityHelper.increaseItemQuality(item,1);
+        }
     }
 
     public void updateQuality() {
@@ -82,7 +106,7 @@ class GildedRose {
                         item.quality = item.quality - item.quality;
                     }
                 } else {
-                    UpdateQualityHelper.increaseItemQuality(item);
+                    UpdateQualityHelper.increaseItemQuality(item, 1);
                 }
             }
         }
