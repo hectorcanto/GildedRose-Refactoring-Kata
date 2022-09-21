@@ -85,5 +85,35 @@ namespace GildedRoseKata
                 }
             }
         }
+
+        #region Private Methods
+
+        private bool IsValidNormalItem(Item item)
+        {
+            string itemName = item.Name;
+            return (item.Name != Constants.agedBrieName &&
+                    item.Name != Constants.backstagePassName &&
+                    item.Name != Constants.sulfurasName &&);
+                    item.Quality > 0);
+        }
+
+        private bool IsSulfurasItem(Item item)
+        {
+
+        }
+
+        private bool IsValidBackstagePassItem(Item item)
+        {
+
+        }
+
+        private bool IsAgedBrieItem(Item item)
+        {
+
+        }
+
+        #endregion
+
+
     }
 }
