@@ -2,6 +2,7 @@ package com.gildedrose;
 
 import static com.gildedrose.GildedRoseConstants.MAX_QUALITY_VALUE;
 import static com.gildedrose.ItemNameValues.AGED_BRIE;
+import static com.gildedrose.ItemNameValues.CONJURED;
 import static com.gildedrose.ItemNameValues.SULFURAS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -31,6 +32,12 @@ class GildedRoseTest {
     void testSulfuras(){
         Item actual = new Item(SULFURAS, 2 , 1);
         Item expected = new Item(SULFURAS, 2 , 1);
+    }
+
+    @Test
+    void testConjured(){
+        Item actual = new Item(CONJURED, 2 , 5);
+        Item expected = new Item(CONJURED, 2 , 3);
     }
 
 

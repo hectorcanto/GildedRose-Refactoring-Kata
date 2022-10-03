@@ -2,6 +2,7 @@ package com.gildedrose;
 
 import static com.gildedrose.ItemNameValues.AGED_BRIE;
 import static com.gildedrose.ItemNameValues.BACKSTAGE_PASSES;
+import static com.gildedrose.ItemNameValues.CONJURED;
 import static com.gildedrose.ItemNameValues.SULFURAS;
 
 public class TexttestFixture {
@@ -18,7 +19,7 @@ public class TexttestFixture {
                 new Item(BACKSTAGE_PASSES, 10, 49),
                 new Item(BACKSTAGE_PASSES, 5, 49),
                 // this conjured item does not work properly yet
-                new Item("Conjured Mana Cake", 3, 6) };
+                new Item(CONJURED + " Mana Cake", 3, 6) };
 
         GildedRose app = new GildedRose(items);
 
