@@ -7,7 +7,6 @@ describe("Gilded Rose", function () {
     expect(items[0].name).toBe("foo");
   });
 
-  //Test each item updateQuality function
   it("should update quality for Aged Brie", function () {
     const gildedRose = new Shop([new Item("Aged Brie", 2, 0)]);
     const items = gildedRose.updateQuality();
@@ -28,12 +27,6 @@ describe("Gilded Rose", function () {
     ]);
     const items = gildedRose.updateQuality();
     expect(items[0].quality).toBe(80);
-  });
-
-  it("should update quality for Conjured Mana Cake", function () {
-    const gildedRose = new Shop([new Item("Conjured Mana Cake", 3, 6)]);
-    const items = gildedRose.updateQuality();
-    expect(items[0].quality).toBe(4);
   });
 
   it("should update quality for default", function () {

@@ -20,12 +20,6 @@ const ITEM_QUALITY_UPDATE_MAPPER = {
       return item.quality + 2 > MAX_QUALITY ? MAX_QUALITY : item.quality + 2;
     return item.quality + 1;
   },
-  "Conjured Mana Cake": (item) => {
-    if (item.quality <= MIN_QUALITY) return item.quality;
-    newQuality = item.quality - (item.sellIn < MIN_SELLIN ? 4 : 2);
-    if (newQuality <=  MIN_QUALITY) return MIN_QUALITY;
-    return newQuality;
-  },
   default: (item) => {
     if (item.quality <= MIN_QUALITY) return item.quality;
     newQuality = item.quality - (item.sellIn < MIN_SELLIN ? 2 : 1);
