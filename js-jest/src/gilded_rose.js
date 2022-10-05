@@ -1,6 +1,5 @@
-const CONSTANTS = require("./constants.js");
-const ITEM_QUALITY_UPDATE_MAPPER = CONSTANTS.ITEM_QUALITY_UPDATE_MAPPER;
-const LEGENDARY_ITEMS = CONSTANTS.LEGENDARY_ITEMS;
+const { LEGENDARY_ITEMS } = require("./constants.js");
+const { ITEM_QUALITY_UPDATE_MAPPER } = require("./update_mapper.js");
 
 class Item {
   constructor(name, sellIn, quality) {
